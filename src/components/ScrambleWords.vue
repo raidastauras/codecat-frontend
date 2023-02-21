@@ -28,7 +28,7 @@ const replaceOrAddCharacter = (str: string, idx: number, repl: string) => {
 onMounted( async () => {
 
   // set the starting string
-  word.value = '--//--'
+  word.value = '0x636F6465636174'
 
   // start the scrambling
   while (true) {
