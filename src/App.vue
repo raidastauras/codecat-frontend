@@ -34,19 +34,17 @@ onMounted(() => {
         <Cats />
       </div>
     </div>
-    <div style="padding-top: 50%;">
+    <div style="position: absolute; bottom: 10%; left: 0; right: 0">
       <a href="https://github.com/RaidasGrisk" target="_blank">github</a><br>
-      <a href="https://raidasgrisk.github.io/" target="_blank">portfolio</a><br>
-      <span>
-        <n-tooltip placement="bottom" trigger="click" :show-arrow="false">
-          <template #trigger>
-            <a @click="copyToClipboard()" style="cursor: pointer;">
-              email
-            </a>
-          </template>
-          <span> Copied! </span>
-        </n-tooltip>
-      </span>
+      <a href="https://raidasgrisk.github.io/" target="_blank">stories</a><br>
+      <n-tooltip placement="bottom" trigger="click" :show-arrow="false">
+        <template #trigger>
+          <a @click="copyToClipboard()" style="cursor: pointer;">
+            email
+          </a>
+        </template>
+        <span> Copied! </span>
+      </n-tooltip>
     </div>
   </div>
 </template>
