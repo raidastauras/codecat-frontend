@@ -4,8 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -16,18 +14,18 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #54575c;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #763ae7;
 }
 
 body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100vh;
   min-height: 100vh;
 }
 
@@ -55,24 +53,25 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
+::selection {
+  text-shadow: none;
+  background: #007be7;
 }
 
 #app {
-  max-width: 1280px;
+  /* max-width: 1280px; */
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: black;
   }
   a:hover {
-    color: #747bff;
+    color: #763ae7;
   }
   button {
     background-color: #f9f9f9;
