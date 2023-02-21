@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import { NSpace } from 'naive-ui'
+import { useIsMobile } from '../utils'
 
+const isMobile = useIsMobile()
 const transition = ref(true)
 const cat = ref('')
 const cats = [
@@ -72,7 +74,7 @@ onUnmounted( async() => {
 <template>
   <n-space justify="center">
     <span>[</span>
-    <Transition name="slide-fade" style="position:relative; bottom: 30px">
+    <Transition name="slide-fade" :style="isMobile ? 'position:relative; bottom: 30px' : 'position:relative; bottom: 40px'">
       <p v-if="transition">{{ cat }}</p>
     </Transition>
     <span>]</span>

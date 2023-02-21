@@ -5,9 +5,11 @@ const word = ref()
 const alphabet = 'abcdefghijklmnopqrstuvwxyz '
 const words = [
   'machine learning',
+  'software engineering',
   'zero knowledge proofs',
-  'blockchains',
+  'data science',
   'software development',
+  'blockchain exploration',
 ]
 
 const sleep = (ms: number) => {
