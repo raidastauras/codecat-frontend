@@ -26,11 +26,11 @@ a:hover {
 }
 
 body {
-  margin: 0;
   display: flex;
   place-items: center;
-  min-width: 100vh;
-  min-height: 100vh;
+  /* min-width: 100%; */
+  min-height: 100%;
+
 }
 
 ::selection {
@@ -41,4 +41,5 @@ body {
 #app {
   margin: 0 auto;
   text-align: center;
+  padding: 5em;
 }
