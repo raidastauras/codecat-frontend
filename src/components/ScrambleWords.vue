@@ -10,11 +10,11 @@ const words = [
   'software development',
 ]
 
-const sleep = (ms) => {
+const sleep = (ms: number) => {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-const replaceOrAddCharacter = (str, idx, repl) => {
+const replaceOrAddCharacter = (str: string, idx: number, repl: string) => {
   // add
   if (idx > str.length) {
     return str + repl
