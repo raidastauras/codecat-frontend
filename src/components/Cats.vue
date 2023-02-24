@@ -4,7 +4,7 @@ import { NSpace } from 'naive-ui'
 import { useIsMobile } from '../utils'
 
 const isMobile = useIsMobile()
-const prevYTouch = ref(null)
+const prevYTouch = ref(0)
 const transition = ref(true)
 const cat = ref('')
 const cats = [
@@ -70,7 +70,7 @@ onMounted( async() => {
     const yTouch = event.changedTouches[0].clientY
     if (Math.abs(prevYTouch.value - yTouch) > 100) {
       await randomizeCat()
-      prevYTouch.value = event.changedTouches[0].clientY
+      prevYTouch.value = yTouch
     }
   })
 })
@@ -93,7 +93,7 @@ onUnmounted( async() => {
     const yTouch = event.changedTouches[0].clientY
     if (Math.abs(prevYTouch.value - yTouch) > 100) {
       await randomizeCat()
-      prevYTouch.value = event.changedTouches[0].clientY
+      prevYTouch.value = yTouch
     }
   })
 })
