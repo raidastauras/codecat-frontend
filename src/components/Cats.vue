@@ -4,12 +4,12 @@ import { NSpace } from 'naive-ui'
 import { useIsMobile } from '../utils'
 
 const isMobile = useIsMobile()
+const prevYTouch = ref(null)
 const transition = ref(true)
 const cat = ref('')
 const cats = [
-  // '🐈',
   '🐱',
-  '😿',
+  // '😿',
   '🙀',
   '😾',
   '😹',
@@ -17,8 +17,15 @@ const cats = [
   '😺',
   '😽',
   '😸',
-  // '🐈‍⬛',
   '😻',
+  '🦁',
+  '🐯',
+
+  // '🐈‍⬛',
+  // '🐈',
+  // '🐅',
+  // '🐆',
+
   // '🐱‍🚀',
   // '🐱‍👤',
   // '🐱‍💻',
@@ -26,11 +33,7 @@ const cats = [
   // '🐱‍👓',
   // '🐱‍🏍',
   // '🐾',
-  '🦊',
-  '🦁',
-  '🐯',
-  // '🐅',
-  // '🐆',
+  // '🦊',
 ]
 
 const sleep = (ms: number) => {
@@ -46,17 +49,33 @@ const randomizeCat = async () => {
 
 onMounted( async() => {
   await randomizeCat()
+
+  // wheel
   window.addEventListener('wheel', async (event) => {
     await randomizeCat()
   })
+
+  // button push
   window.addEventListener('keypress', async (event) => {
     await randomizeCat()
   })
+
+  // click
   window.addEventListener('click', async (event) => {
     await randomizeCat()
   })
+
+  // mobile (also try to add some kind of a threshold)
+  window.addEventListener('touchmove', async (event) => {
+    const yTouch = event.changedTouches[0].clientY
+    if (Math.abs(prevYTouch.value - yTouch) > 100) {
+      await randomizeCat()
+      prevYTouch.value = event.changedTouches[0].clientY
+    }
+  })
 })
 
+// repeat the same as onMounted, but remove
 onUnmounted( async() => {
   window.removeEventListener('wheel', async (event) => {
     await randomizeCat()
@@ -64,8 +83,18 @@ onUnmounted( async() => {
   window.removeEventListener('keypress', async (event) => {
     await randomizeCat()
   })
-  window.addEventListener('click', async (event) => {
+  window.removeEventListener('click', async (event) => {
     await randomizeCat()
+  })
+  window.removeEventListener('touchmove', async (event) => {
+    await randomizeCat()
+  })
+  window.removeEventListener('touchmove', async (event) => {
+    const yTouch = event.changedTouches[0].clientY
+    if (Math.abs(prevYTouch.value - yTouch) > 100) {
+      await randomizeCat()
+      prevYTouch.value = event.changedTouches[0].clientY
+    }
   })
 })
 
