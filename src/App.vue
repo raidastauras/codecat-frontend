@@ -36,8 +36,8 @@ onMounted(() => {
     </div>
     <div style="position: absolute; bottom: 10%; left: 0; right: 0">
       <div :style="'font-size: 1.3em;'">
-        <a href="https://github.com/RaidasGrisk" target="_blank">github</a><br>
-        <a href="https://raidasgrisk.github.io/" target="_blank">stories</a><br>
+        <a href="https://github.com/RaidasTauras" target="_blank">github</a><br>
+        <a href="https://raidastauras.github.io/" target="_blank">stories</a><br>
         <n-tooltip placement="bottom" trigger="click" :show-arrow="false">
           <template #trigger>
             <a @click="copyToClipboard()" style="cursor: pointer;">
